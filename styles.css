@@ -11,10 +11,6 @@ h2 {
 
 .project-button {
   height: 200px;  
-    width: 200px;  
-}
-
-.smallbreak{
-   display: block;
-  margin: 10px 0; 
+  width: 200px;  
+  margin: 10px;
 }
