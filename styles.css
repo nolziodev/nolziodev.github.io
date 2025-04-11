@@ -15,5 +15,6 @@ h2 {
 }
 
 .smallbreak{
-   margin-bottom: 10px
+   display: block;
+  margin: 10px 0; 
 }
