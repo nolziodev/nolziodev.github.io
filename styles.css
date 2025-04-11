@@ -8,3 +8,8 @@ h2 {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.project-button {
+    width: 90%;
+  height: 200px;  
+}
