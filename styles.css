@@ -9,7 +9,7 @@ h2 {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background-image: url("pictures/icon.png"); /* your image here */
+  background-image: url("pictures/pfp1.png"); /* your image here */
   background-size: cover; /* covers the whole button */
   background-position: center; /* center the image */
   color: white; /* text color on top of image */
@@ -26,7 +26,7 @@ h2 {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background-image: url("pictures/icon2.png"); /* your image here */
+  background-image: url("pictures/pfp2.png"); /* your image here */
   background-size: cover; /* covers the whole button */
   background-position: center; /* center the image */
   color: white; /* text color on top of image */
@@ -43,7 +43,7 @@ h2 {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background-image: url("pictures/icon2.png"); /* your image here */
+  background-image: url("pictures/pfp2.png"); /* your image here */
   background-size: cover; /* covers the whole button */
   background-position: center; /* center the image */
   color: white; /* text color on top of image */
