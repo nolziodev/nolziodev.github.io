@@ -2,15 +2,67 @@ h2 {
   text-decoration: underline;
 }
 
-.centered-div {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.project-button1 {
+  height: 200px;
+  width: 200px;
+  margin: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-image: url("pictures/icon.png"); /* your image here */
+  background-size: cover; /* covers the whole button */
+  background-position: center; /* center the image */
+  color: white; /* text color on top of image */
+  font-size: 18px;
+  padding: 12px 24px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* make text more readable */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.project-button {
-  height: 200px;  
-  width: 200px;  
+.project-button2 {
+  height: 200px;
+  width: 200px;
   margin: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-image: url("pictures/icon2.png"); /* your image here */
+  background-size: cover; /* covers the whole button */
+  background-position: center; /* center the image */
+  color: white; /* text color on top of image */
+  font-size: 18px;
+  padding: 12px 24px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* make text more readable */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-button3 {
+  height: 200px;
+  width: 200px;
+  margin: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-image: url("pictures/icon2.png"); /* your image here */
+  background-size: cover; /* covers the whole button */
+  background-position: center; /* center the image */
+  color: white; /* text color on top of image */
+  font-size: 18px;
+  padding: 12px 24px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* make text more readable */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hovergrow:hover {
+  transform: scale(1.05); /* Grows 10% */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Optional: add depth */
+}
+
+.project-div {
+  height: 230px;
+  width: 670px;
+  margin: 5px;
+}
+
+.topbar {
 }
