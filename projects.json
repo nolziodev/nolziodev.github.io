@@ -1,26 +1,8 @@
 [
             {
-                "title": "Urban Silence",
-                "link": "#",
-                "type": "Cinematography",
-                "date": "2024-05-12"
+                "title": "AllySim",
+                "link": "/AllySim/fr.html",
+                "type": "Programming",
+                "date": "2026-05-19"
             },
-            {
-                "title": "Spatial UI Concept",
-                "link": "#",
-                "type": "Interface",
-                "date": "2023-11-01"
-            },
-            {
-                "title": "Synthesized Roots",
-                "link": "#",
-                "type": "Audio Branding",
-                "date": "2023-01-15"
-            },
-            {
-                "title": "Echoes of Light",
-                "link": "#",
-                "type": "Installation",
-                "date": "2025-01-10"
-            }
         ]
