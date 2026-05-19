@@ -5,8 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projet Justice Sociale - Simulation</title>
     <style>
-        body { font-family: sans-serif; background: #121212; color: #e0e0e0; display: flex; justify-content: center; padding: 20px; }
-        #game-container { max-width: 600px; background: #1e1e1e; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); min-height: 300px; }
+        body { 
+            font-family: sans-serif; 
+            background: #121212; 
+            color: #e0e0e0; 
+            display: flex; 
+            flex-direction: column; /* Allows content to stack vertically */
+            align-items: center; 
+            justify-content: center; 
+            padding: 20px; 
+            min-height: 90vh; 
+        }
+        #game-container { 
+            width: 100%;
+            max-width: 600px; 
+            background: #1e1e1e; 
+            padding: 30px; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5); 
+            min-height: 300px; 
+            box-sizing: border-box;
+        }
         h1 { color: #4caf50; font-size: 1.5rem; margin-top: 0; }
         
         /* Animation: Fade in and move up */
@@ -33,6 +52,23 @@
         #resources { margin-top: 30px; padding-top: 20px; border-top: 1px solid #444; display: none; }
         a { color: #81c784; text-decoration: none; font-weight: bold; }
         a:hover { text-decoration: underline; }
+
+        /* Language Link Footer Styling */
+        .lang-footer {
+            margin-top: 40px;
+            display: flex;
+            gap: 24px; /* Adds space horizontally between links */
+            justify-content: center;
+        }
+        .lang-link {
+            color: #888;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+        .lang-link:hover {
+            color: #4caf50;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -55,6 +91,11 @@
         <button onclick="location.reload()" style="margin-top:10px;">Recommencer la simulation</button>
     </div>
 </div>
+
+<footer class="lang-footer">
+    <a href="/AllySim/" class="lang-link">English</a>
+    <a href="/AllySim/fr" class="lang-link">Français</a>
+</footer>
 
 <script>
     const scenarioElement = document.getElementById('scenario');
@@ -98,7 +139,6 @@
     };
 
     function startNode(nodeIndex) {
-        // Clear previous content
         btnContainer.innerHTML = '';
         scenarioElement.innerHTML = '';
         
@@ -110,13 +150,11 @@
 
         const node = storyNodes[nodeIndex];
 
-        // 1. Show Description First
         const textDiv = document.createElement('div');
         textDiv.className = 'fade-in';
         textDiv.innerText = node.text;
         scenarioElement.appendChild(textDiv);
 
-        // 2. Stagger Buttons Appearance
         node.options.forEach((option, index) => {
             setTimeout(() => {
                 const btn = document.createElement('button');
@@ -124,14 +162,12 @@
                 btn.innerText = option.text;
                 btn.onclick = () => startNode(option.nextNode);
                 btnContainer.appendChild(btn);
-            }, (index + 1) * 600); // 400ms delay per button
+            }, (index + 1) * 600); 
         });
     }
 
-    // Launch initial node
     startNode(1);
 </script>
-<a href="/AllySim/">English</a>
-<a href="/AllySim/fr">Français</a>
+
 </body>
 </html>
