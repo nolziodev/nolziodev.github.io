@@ -1,29 +1,152 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>nolzio's site</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Minimal</title>
+    <!-- Using Tailwind for layout and standard utility classes -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #faf9f6; /* Sophisticated light beige */
+            --text: #111111;
+            --muted: #6b6b6b;
+            --border: #e8e6e1;
+            --hover: #f2f0ea;
+        }
 
-  <body>
-  
-    <div class="maintext">
-        <h1>Hello!</h1>
-        <p>My name is nolzio and this is my site.</p>
-        <p>I programm in HTML, CSS, Python and Scratch</p>
-        <p>This is the website I am going to host my projects on</p>
-        <br />
+        /* Dark mode overrides (respects OS preferences) */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #09090b;
+                --text: #fafafa;
+                --muted: #a1a1aa;
+                --border: #27272a;
+                --hover: #18181b;
+            }
+        }
 
-        <br />
-        <p> bottem text </p>
-        <br />
-        <a href="https://twitch.tv/nolzio">twitch.tv/nolzio</a>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            transition: background-color 0.4s ease;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .text-muted { color: var(--muted); }
+        .border-base { border-color: var(--border); }
+        
+        /* Subtle editorial hover effect */
+        .project-item {
+            transition: all 0.2s ease;
+            border-radius: 8px;
+            margin-left: -12px;
+            margin-right: -12px;
+            padding: 12px;
+        }
+
+        .project-item:hover {
+            background-color: var(--hover);
+        }
+
+        .bio-text {
+            line-height: 1.7;
+            letter-spacing: -0.01em;
+        }
+
+        /* Removing focus outline for a cleaner look, but keeping it for accessibility */
+        a:focus {
+            outline: 2px solid var(--muted);
+            outline-offset: 4px;
+        }
+    </style>
+</head>
+<body class="selection:bg-zinc-200 dark:selection:bg-zinc-800">
+
+    <div class="max-w-2xl mx-auto px-6 py-24 md:py-40">
+        
+        <header class="mb-20">
+            <h1 class="text-xl font-medium tracking-tight">Your Name</h1>
+            <p class="text-muted text-sm mt-1">Multimedia Designer</p>
+        </header>
+
+        <section class="mb-32">
+            <p class="bio-text text-xl md:text-2xl font-light">
+                I create digital experiences through video, sound, and code. Currently focused on building minimal interfaces and high-impact visual storytelling for global brands.
+            </p>
+        </section>
+
+        <section class="mb-32">
+            <h2 class="text-xs uppercase tracking-[0.2em] text-muted mb-10 font-semibold">Selected Projects</h2>
+            <ul id="project-list" class="space-y-2">
+                <!-- Projects will be injected here by JavaScript -->
+                <li class="text-sm text-muted animate-pulse">Loading work...</li>
+            </ul>
+        </section>
+
+        <footer class="grid grid-cols-1 md:grid-cols-2 gap-16 pt-12 border-t border-base">
+            <div>
+                <h2 class="text-xs uppercase tracking-[0.2em] text-muted mb-6 font-semibold">Contact</h2>
+                <a href="mailto:hello@example.com" class="text-sm border-b border-transparent hover:border-zinc-500 transition-colors duration-300 pb-1">
+                    hello@example.com
+                </a>
+            </div>
+            <div>
+                <h2 class="text-xs uppercase tracking-[0.2em] text-muted mb-6 font-semibold">Connect</h2>
+                <div class="flex flex-col space-y-3">
+                    <a href="#" class="text-sm text-muted hover:text-zinc-900 dark:hover:text-white transition-colors">Instagram</a>
+                    <a href="#" class="text-sm text-muted hover:text-zinc-900 dark:hover:text-white transition-colors">LinkedIn</a>
+                    <a href="#" class="text-sm text-muted hover:text-zinc-900 dark:hover:text-white transition-colors">Vimeo</a>
+                </div>
+            </div>
+        </footer>
+
     </div>
 
-    <script type="module" src="script.js"></script>
-    
-    
-  </body>
+    <script>
+        async function renderProjects() {
+            const list = document.getElementById('project-list');
+            
+            try {
+                // Fetching the external JSON file
+                const response = await fetch('projects.json');
+                if (!response.ok) throw new Error('Network response was not ok');
+                
+                const projects = await response.json();
+
+                // Automatically sorting by date (newest first)
+                const sortedProjects = [...projects].sort((a, b) => {
+                    return new Date(b.date) - new Date(a.date);
+                });
+
+                list.innerHTML = '';
+
+                sortedProjects.forEach(project => {
+                    const year = new Date(project.date).getFullYear();
+                    const li = document.createElement('li');
+                    li.className = "project-item";
+                    li.innerHTML = `
+                        <a href="${project.link}" class="flex items-baseline justify-between group">
+                            <div class="flex flex-col">
+                                <span class="text-md font-normal">${project.title}</span>
+                                <span class="text-xs text-muted font-light mt-0.5">${project.type}</span>
+                            </div>
+                            <span class="text-xs text-muted font-light tabular-nums">${year}</span>
+                        </a>
+                    `;
+                    list.appendChild(li);
+                });
+            } catch (error) {
+                console.error("Error loading external JSON data:", error);
+                list.innerHTML = `<li class="text-xs text-muted">Error loading projects. Ensure projects.json is present and reachable.</li>`;
+            }
+        }
+
+        // Start the process on load
+        window.onload = renderProjects;
+    </script>
+</body>
 </html>
