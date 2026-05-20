@@ -74,7 +74,7 @@
 <body>
 
 <div id="game-container">
-    <h1>Simulation: Le Parcours d'un Réfugié</h1>
+    <h1>The Journey of a Refugee</h1>
     <div id="scenario-container">
         <div id="scenario"></div>
     </div>
@@ -111,11 +111,11 @@
             ]
         },
         2: {
-            text: "The Welcome Center",
+            text: "You arrive at a local shelter, you look around as you see other refugees from all over the place.",
             options: [
                 { text: "Wait 10 days for a free, official translator", nextNode: 7 },
                 { text: "Accept under-the-table cash work immediately to pay for private translation", nextNode: 5 },
-                { text: "Use remaining money for a cheap hotel to search for a faster pro bono lawyer independently", nextNode: 6 }
+                { text: "Look at the job board for open, availiable jobs", nextNode: 6 }
             ]
         },
         3: {
@@ -128,25 +128,25 @@
             text: "Couch Surfing & Delay",
             options: [
                 { text: "Pool resources, relative helps translate docs unofficially", nextNode: 10 },
-                { text: "Swallow pride, seek NGO help before 30 days", nextNode: 2 },
+                { text: "Swallow pride, seek shelter help before 30 days", nextNode: 2 },
                 { text: "Relationship sours over money, missed deadline", nextNode: 11 },
             ]
         },
 
 
         5: {
-            text: "Gray Market Labor",
+            text: "On the board you find a few job listings, all Gray Market Labor. There are listings for...",
             options: [
-                { text: "Exploited, Missed Deadline, Deported", nextNode: 16 },
-                { text: "Arrested in Workplace Raid, Deported", nextNode: 17 },
-                { text: "Instead pay a Private Translator", nextNode: 18 }
+                { text: "Exploited, Missed Deadline, Deported (REPLACE)", nextNode: 16 },
+                { text: "Arrested in Workplace Raid, Deported (REPLACE)", nextNode: 17 },
+                { text: "Instead, pay a Private Translator", nextNode: 18 }
             ]
         },
         6: {
             text: "Independent Legal Search",
             options: [
-                { text: "Desperation sets in, need cash for lawyer", nextNode: 5 },
-                { text: "Choose bad lawyer", nextNode: 19 },
+                { text: "Desperation sets in, need cash for good lawyer", nextNode: 5 },
+                { text: "Choose random lawyer", nextNode: 19 },
                 { text: "Use cash to buy equipment", nextNode: 20 },
             ]
         },
