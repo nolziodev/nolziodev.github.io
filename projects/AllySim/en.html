@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AllySim</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- SVG for modern, scalable Chrome browsers -->
+    <link rel="icon" type="image/svg+xml" href="projects/AllySim/img/favicon.svg">
+
+    <!-- PNG fallback and Android Chrome shortcut -->
+    <link rel="icon" type="image/png" sizes="192x192" href="projects/AllySim/img/favicon.png">
+
 </head>
 <body>
 
@@ -24,9 +30,8 @@
             <li style="margin-bottom: 10px;"><a href="https://www.unicef.ca/fr" target="_blank">UNICEF Canada</a></li>
         </ul>
         </br>
-        </br>
         <p>Made by Corson Moise and Nolan Finlay</p>
-        <button onclick="location.reload()" style="margin-top:10px;">Recommencer la simulation</button>
+        <button onclick="location.reload()" style="margin-top:10px;">Restart the simulation</button>
     </div>
 </div>
 
@@ -59,7 +64,7 @@
         3: {
             text: "You spend $50 and get a taxi to your distants relitives house, the one who moved to Canada years ago. You walk up to their door, they anwser",
             options: [
-                { text: "Ask to say", nextNode: 4 }
+                { text: "Ask to stay", nextNode: 4 }
             ]
         },
         4: {
@@ -73,16 +78,16 @@
 
 
         5: {
-            text: "On the board you find one job listing. There are is a listing for...",
+            text: "On the board you find one job listing. There is a listing for...",
             options: [
-                { text: "Entry level groacery store worker", nextNode: 16 },
+                { text: "A Entry level groacery store worker", nextNode: 16 },
                 { text: "Change your mind, pay a Private Translator", nextNode: 18 }
             ]
         },
         6: {
             text: "Independent Legal Search",
             options: [
-                { text: "Desperation sets in, need cash for good lawyer", nextNode: 5 },
+                { text: "Desperation sets in, need more cash for good lawyer", nextNode: 17 },
                 { text: "Choose the first lawyer you find", nextNode: 19 },
                 { text: "Use cash to buy equipment", nextNode: 20 },
             ]
@@ -141,7 +146,7 @@
             ]
         },
         15: {
-            text: "Normal Ending: Stagnant Minimum Wage",
+            text: "Normal Ending: Because you never desided to put in any effort you stay at your entry possition for a long time, never making it big. Life is a bit harder but your gratefull for your freedom",
             options: [
                 { text: "End simulation.", nextNode: 'end' }
             ]
@@ -152,6 +157,12 @@
                 { text: "End simulation.", nextNode: 'end' }
             ]
         },
+        17: {
+            text: "On the board you find one job listing. There is a listing for...",
+            options: [
+                { text: "A Entry level groacery store worker", nextNode: 16 },
+            ]
+        },
         18: {
             text: "Normal Ending: Paid Private Translator just in time, but broke",
             options: [
@@ -159,7 +170,7 @@
             ]
         },
         19: {
-            text: "Bad Ending: You go on a computer at the local library and find a ad for a lawyer that only takes $200. You reach out and they agree to help draft a Asylum claim, so you send all your money, then 'Lawyer ghosts you. Now with no money the deadline for documents and asylum claim passes, you get Deported",
+            text: "Bad Ending: You go on a computer at the local library and find a ad for a cheap lawyer. You reach out and they agree to help draft a Asylum claim, so you send all your remaining money, then 'Lawyer ghosts you. Now with no money the deadline for documents and asylum claim passes, you get Deported",
             options: [
                 { text: "End simulation.", nextNode: 'end' }
             ]
