@@ -4,72 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AllySim</title>
-    <style>
-        body { 
-            font-family: sans-serif; 
-            background: #121212; 
-            color: #e0e0e0; 
-            display: flex; 
-            flex-direction: column; /* Allows content to stack vertically */
-            align-items: center; 
-            justify-content: center; 
-            padding: 20px; 
-            min-height: 90vh; 
-        }
-        #game-container { 
-            width: 100%;
-            max-width: 600px; 
-            background: #1e1e1e; 
-            padding: 30px; 
-            border-radius: 8px; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5); 
-            min-height: 300px; 
-            box-sizing: border-box;
-        }
-        h1 { color: #4caf50; font-size: 1.5rem; margin-top: 0; }
-        
-        /* Animation: Fade in and move up */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .fade-in {
-            opacity: 0; /* Starts hidden */
-            animation: fadeInUp 1s ease forwards;
-        }
-
-        #scenario { margin-bottom: 25px; line-height: 1.6; font-size: 1.1rem; }
-        .btn-container { display: grid; gap: 10px; }
-        
-        button { 
-            background: #333; color: white; border: 1px solid #444; 
-            padding: 12px; border-radius: 4px; cursor: pointer; 
-            transition: 0.2s; text-align: left; font-size: 1rem;
-        }
-        button:hover { background: #4caf50; color: white; border-color: #4caf50; }
-        
-        #resources { margin-top: 30px; padding-top: 20px; border-top: 1px solid #444; display: none; }
-        a { color: #81c784; text-decoration: none; font-weight: bold; }
-        a:hover { text-decoration: underline; }
-
-        /* Language Link Footer Styling */
-        .lang-footer {
-            margin-top: 40px;
-            display: flex;
-            gap: 24px; /* Adds space horizontally between links */
-            justify-content: center;
-        }
-        .lang-link {
-            color: #888;
-            font-size: 0.9rem;
-            transition: color 0.2s ease;
-        }
-        .lang-link:hover {
-            color: #4caf50;
-            text-decoration: none;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -82,11 +17,11 @@
     <div id="btn-container" class="btn-container"></div>
 
     <div id="resources" class="fade-in">
-        <h3>Faire une différence réelle :</h3>
-        <p>L'injustice sociale n'est pas un jeu. Voici des organisations qui aident réellement au Canada :</p>
+        <h3>Make a <b>REAL</b> difference :</h3>
+        <p>Social injustice is not a game. Here are some organisations who make a real difference in Canada :</p>
         <ul>
-            <li style="margin-bottom: 10px;"><a href="https://ccrweb.ca/fr" target="_blank">Conseil canadien pour les réfugiés (CCR)</a></li>
-            <li style="margin-bottom: 10px;"><a href="https://www.unicef.ca/fr" target="_blank">UNICEF Canada - Droits des enfants</a></li>
+            <li style="margin-bottom: 10px;"><a href="https://ccrweb.ca/fr" target="_blank">Canadian Council for Refugees (CCR)</a></li>
+            <li style="margin-bottom: 10px;"><a href="https://www.unicef.ca/fr" target="_blank">UNICEF Canada</a></li>
         </ul>
         <button onclick="location.reload()" style="margin-top:10px;">Recommencer la simulation</button>
     </div>
@@ -111,7 +46,7 @@
             ]
         },
         2: {
-            text: "You arrive at a local shelter, you look around as you see other refugees from all over the place.",
+            text: "You arrive at a local shelter. Looking around, you see other refugees from all over the place.",
             options: [
                 { text: "Wait 10 days for a free, official translator", nextNode: 7 },
                 { text: "Accept under-the-table cash work immediately to pay for private translation", nextNode: 5 },
@@ -119,27 +54,26 @@
             ]
         },
         3: {
-            text: "Relitives House",
+            text: "You spend $50 and get a taxi to your distants relitives house, the one who moved to Canada years ago. You walk up to their door, they anwser",
             options: [
-                { text: "Relitive offers house", nextNode: 4 }
+                { text: "Ask to say", nextNode: 4 }
             ]
         },
         4: {
-            text: "Couch Surfing & Delay",
+            text: "Your relitive lets you stay on their couch as long as you pay rent. You pay",
             options: [
                 { text: "Pool resources, relative helps translate docs unofficially", nextNode: 10 },
                 { text: "Swallow pride, seek shelter help before 30 days", nextNode: 2 },
-                { text: "Relationship sours over money, missed deadline", nextNode: 11 },
+                { text: "Beg to stay missed deadline", nextNode: 11 },
             ]
         },
 
 
         5: {
-            text: "On the board you find a few job listings, all Gray Market Labor. There are listings for...",
+            text: "On the board you find one job listing. There are is a listing for...",
             options: [
-                { text: "Exploited, Missed Deadline, Deported (REPLACE)", nextNode: 16 },
-                { text: "Arrested in Workplace Raid, Deported (REPLACE)", nextNode: 17 },
-                { text: "Instead, pay a Private Translator", nextNode: 18 }
+                { text: "Entry level groacery store worker", nextNode: 16 },
+                { text: "Change your mind, pay a Private Translator", nextNode: 18 }
             ]
         },
         6: {
@@ -151,10 +85,10 @@
             ]
         },
         7: {
-            text: "Proper Documentation Route",
+            text: "After 10 days the translator arrives. She translates your documents, opening doors to employment",
             options: [
-                { text: "Docs verified! Apply for community college upskilling", nextNode: 8 },
-                { text: "Docs verified! Take a government-placed entry-level job", nextNode: 9 },
+                { text: "Apply for community college upskilling", nextNode: 8 },
+                { text: "Find a government-placed entry-level job", nextNode: 9 },
             ]
         },
         8: {
@@ -165,7 +99,7 @@
             ]
         },
         9: {
-            text: "Stable Employment",
+            text: "After a few weeks you are able to find a government-placed entry-level job, passing the interview",
             options: [
                 { text: "Bare Minimum", nextNode: 14 },
                 { text: "Extra Effort", nextNode: 15 },
@@ -180,7 +114,7 @@
             ]
         },
         11: {
-            text: "Bad Ending: Kicked out mid-winter & Deported",
+            text: "Bad Ending: Kicked out mid-winter & Deported. Over time your relationship sours over money. Eventually your relitive kicks you out, mid winter. With the shelters full, you turn to the only way you can survive, stealing. You eventually get caught, and having missed the document deadline, get deported",
             options: [
                 { text: "End simulation.", nextNode: 'end' }
             ]
@@ -210,7 +144,7 @@
             ]
         },
         16: {
-            text: "Bad Ending: Exploited, Missed Deadline, Deported",
+            text: "Bad Ending: You get the job at the store and start earning, but over time your employer starts exploiting you, witholding checks and gaslighting you. You miss your document deadline, you get Deported",
             options: [
                 { text: "End simulation.", nextNode: 'end' }
             ]
