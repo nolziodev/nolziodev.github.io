@@ -44,32 +44,32 @@
 
     const storyNodes = {
         1: {
-            text: "You arrive in Canada after fleeing a conflict. You only have $200 and untranslated documents",
+            text: "Tu arrive au Canada après avoir fui un conflit. Tu ont seulment 200$ et documents non traduits",
             options: [
-                { text: "Go to a refugee shelter", nextNode: 2 },
-                { text: "Spend $50 on a taxi to a distant relitives address", nextNode: 3 }
+                { text: "Rendez-vous dans un refuge pour réfugiés.", nextNode: 2 },
+                { text: "Dépenser 50 $ sur un taxi a la maison d'un relitives distant", nextNode: 3 }
             ]
         },
         2: {
-            text: "You arrive at a local shelter. Looking around, you see other refugees from all over the place.",
+            text: "Tu arriver a un shelter locale. Looking around, you see other refugees from all over the place.",
             options: [
-                { text: "Wait 10 days for a free, official translator", nextNode: 7 },
-                { text: "Look at the job board for open, availiable jobs", nextNode: 5 },
-                { text: "Look for a lawyer to help with your documents", nextNode: 6 }
+                { text: "Attendez 10 jours pour un a traduction gratuite et officielle", nextNode: 7 },
+                { text: "Chercher a la site d'offres d'emploi pour un emploi overt", nextNode: 5 },
+                { text: "Trouvez un avocat pour vous aider avec vos documents", nextNode: 6 }
             ]
         },
         3: {
-            text: "You spend $50 and get a taxi to your distants relitives house, the one who moved to Canada years ago. You walk up to their door, they anwser",
+            text: "Vous dépensez 50 dollars et prenez un taxi pour aller chez vos parents éloignés.",
             options: [
-                { text: "Ask to stay", nextNode: 4 }
+                { text: "Demander à rester", nextNode: 4 }
             ]
         },
         4: {
             text: "Your relitive lets you stay on their couch as long as you pay rent. You pay the most of your remaining money. The next month rolls around",
             options: [
                 { text: "Pool resources, relative helps translate docs unofficially", nextNode: 10 },
-                { text: "Swallow pride, seek help before 30 day deadline", nextNode: 2 },
-                { text: "Beg to stay even thought you have no remaining money ", nextNode: 11 },
+                { text: "Demandez de autre l'aide avant la date limite de 30 jours.", nextNode: 2 },
+                { text: "Suppliez pour rester, vous n'avez plus d'argent", nextNode: 11 },
             ]
         },
 
@@ -77,8 +77,8 @@
         5: {
             text: "On the board you find one job listing. There is a listing for...",
             options: [
-                { text: "A entry level grocery store worker", nextNode: 16 },
-                { text: "Change your mind, pay a Private Translator", nextNode: 18 }
+                { text: "Un employé de supermarché", nextNode: 16 },
+                { text: "Tu changes d'avis, payer un Traducteur privé", nextNode: 18 }
             ]
         },
         6: {
@@ -113,69 +113,69 @@
 
 
         10: {
-            text: "Good Ending: Your relative helps translate docs unofficially, allowing you to submit on time. You build strong roots in your comunity and start a new job, eventually moving into your own house",
+            text: "Bonne Fin: Your relative helps translate docs unofficially, allowing you to submit on time. You build strong roots in your comunity and start a new job, eventually moving into your own house",
             options: [
-                { text: "End simulation.", nextNode: 'end' }
+                { text: "Finis simulation.", nextNode: 'end' }
             ]
         },
         11: {
-            text: "Bad Ending: Kicked out mid-winter & Deported. Your relitive lets you stay, but overtime your relationship sours over money. Eventually your relitive kicks you out, mid winter. With the shelters full, you turn to the only way you can survive, looting. You eventually get caught, and having missed the document deadline, get deported",
+            text: "Mauvaise Fin : Kicked out mid-winter & Deported. Your relitive lets you stay, but overtime your relationship sours over money. Eventually your relitive kicks you out, mid winter. With the shelters full, you turn to the only way you can survive, looting. You eventually get caught, and having missed the document deadline, get deported",
             options: [
-                { text: "End simulation.", nextNode: 'end' }
+                { text: "Finis simulation.", nextNode: 'end' }
             ]
         },
         12: {
-            text: "Good Ending: You deside to stay in a shelter while finishing collage. Because of this, you student loans were as high. You go on to live a sucessful comfortable life.",
+            text: "Bonne Fin: You deside to stay in a shelter while finishing collage. Because of this, you student loans were as high. You go on to live a sucessful comfortable life.",
             options: [
-                { text: "End simulation.", nextNode: 'end' }
+                { text: "Finis simulation.", nextNode: 'end' }
             ]
         },
         13: {
-            text: "Normal Ending: You sucsessfully complete collage, with a little bit more Student Debt than you were expecting. Allthough it was more you eventually pay it off and go on to live a happy life",
+            text: "Fin Normale : You sucsessfully complete collage, with a little bit more Student Debt than you were expecting. Allthough it was more you eventually pay it off and go on to live a happy life",
             options: [
-                { text: "End simulation.", nextNode: 'end' }
+                { text: "Finis simulation.", nextNode: 'end' }
             ]
         },
         14: {
-            text: "Good Ending: After a few years your hard work pays off when you get promoted to Manager. You life a nice life, you go on to live in a little apartment.",
+            text: "Bonne Fin: After a few years your hard work pays off when you get promoted to Manager. You life a nice life, you go on to live in a little apartment.",
             options: [
-                { text: "End simulation.", nextNode: 'end' }
+                { text: "Finis simulation.", nextNode: 'end' }
             ]
         },
         15: {
-            text: "Normal Ending: Because you never desided to put in any effort you stay at your entry possition for a long time, never making it big. Life is a bit harder but your gratefull for your freedom",
+            text: "Fin Normale : Because you never desided to put in any effort you stay at your entry possition for a long time, never making it big. Life is a bit harder but your gratefull for your freedom",
             options: [
-                { text: "End simulation.", nextNode: 'end' }
+                { text: "Finis simulation.", nextNode: 'end' }
             ]
         },
         16: {
-            text: "Bad Ending: You get the job at the store and start earning, but over time your employer starts exploiting you, witholding checks and gaslighting you. You miss your document deadline, you get Deported",
+            text: "Mauvaise Fin : You get the job at the store and start earning, but over time your employer starts exploiting you, witholding checks and gaslighting you. You miss your document deadline, you get Deported",
             options: [
-                { text: "End simulation.", nextNode: 'end' }
+                { text: "Finis simulation.", nextNode: 'end' }
             ]
         },
         17: {
-            text: "On the board you find one job listing. There is a listing for...",
+            text: "Sur the board you find one job listing. There is a listing for...",
             options: [
                 { text: "A Entry level groacery store worker", nextNode: 16 },
             ]
         },
         18: {
-            text: "Normal Ending: You manage to pay a Private Translator just in time and turn your documents in, but broke now and poverty takes hold. You start working a minimum wage job, living pay cheque to paycheck",
+            text: "Fin Normale : You manage to pay a Private Translator just in time and turn your documents in, but broke now and poverty takes hold. You start working a minimum wage job, living pay cheque to paycheck",
             options: [
-                { text: "End simulation.", nextNode: 'end' }
+                { text: "Finis simulation.", nextNode: 'end' }
             ]
         },
         19: {
-            text: "Bad Ending: You go on a computer at the local library and find a ad for a cheap lawyer. You reach out and they agree to help draft a Asylum claim, so you send all your remaining money, then 'Lawyer ghosts you. Now with no money the deadline for documents and asylum claim passes, you get Deported",
+            text: "Mauvaise Fin : You go on a computer at the local library and find a ad for a cheap lawyer. You reach out and they agree to help draft a Asylum claim, so you send all your remaining money, then 'Lawyer ghosts you. Now with no money the deadline for documents and asylum claim passes, you get Deported",
             options: [
-                { text: "End simulation.", nextNode: 'end' }
+                { text: "Finis simulation.", nextNode: 'end' }
             ]
         },
         20: {
-            text: "Good Ending: You find an excellent lawyer, he helps you with your documents and gets them turned in on time. You go on to start business, and eventually a immigrant shelter",
+            text: "Bonne Fin: You find an excellent lawyer, he helps you with your documents and gets them turned in on time. You go on to start business, and eventually a immigrant shelter",
             options: [
-                { text: "End simulation.", nextNode: 'end' }
+                { text: "Finis simulation.", nextNode: 'end' }
             ]
         }
     };
