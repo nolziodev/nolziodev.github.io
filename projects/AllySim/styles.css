@@ -68,6 +68,6 @@ body {
     background-repeat: no-repeat; /* Prevents the image from tiling */
     background-size: cover;        /* Stretches image to cover the whole screen */
     background-position: center;  /* Centers the image */
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(100%);
 }
 
