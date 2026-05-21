@@ -23,6 +23,9 @@
             <li style="margin-bottom: 10px;"><a href="https://ccrweb.ca/fr" target="_blank">Canadian Council for Refugees (CCR)</a></li>
             <li style="margin-bottom: 10px;"><a href="https://www.unicef.ca/fr" target="_blank">UNICEF Canada</a></li>
         </ul>
+        </br>
+        </br>
+        <p>Made by Corson Moise and Nolan Finlay</p>
         <button onclick="location.reload()" style="margin-top:10px;">Recommencer la simulation</button>
     </div>
 </div>
@@ -60,11 +63,11 @@
             ]
         },
         4: {
-            text: "Your relitive lets you stay on their couch as long as you pay rent. You pay",
+            text: "Your relitive lets you stay on their couch as long as you pay rent. You pay the most of your remaining money. The next month rolls around",
             options: [
                 { text: "Pool resources, relative helps translate docs unofficially", nextNode: 10 },
                 { text: "Swallow pride, seek shelter help before 30 days", nextNode: 2 },
-                { text: "Beg to stay missed deadline", nextNode: 11 },
+                { text: "Beg to stay even thought you have no remaining money ", nextNode: 11 },
             ]
         },
 
@@ -80,7 +83,7 @@
             text: "Independent Legal Search",
             options: [
                 { text: "Desperation sets in, need cash for good lawyer", nextNode: 5 },
-                { text: "Choose random lawyer", nextNode: 19 },
+                { text: "Choose the first lawyer you find", nextNode: 19 },
                 { text: "Use cash to buy equipment", nextNode: 20 },
             ]
         },
@@ -99,10 +102,10 @@
             ]
         },
         9: {
-            text: "After a few weeks you are able to find a government-placed entry-level job, passing the interview",
+            text: "After a few weeks you are able to find a government-placed entry-level job, passing the interview. But now you get to choose, are you going to put in Bare Minimum Effort, or Extra Effort?",
             options: [
-                { text: "Bare Minimum", nextNode: 14 },
-                { text: "Extra Effort", nextNode: 15 },
+                { text: "Bare Minimum", nextNode: 15 },
+                { text: "Extra Effort", nextNode: 14 },
             ]
         },
 
@@ -114,7 +117,7 @@
             ]
         },
         11: {
-            text: "Bad Ending: Kicked out mid-winter & Deported. Over time your relationship sours over money. Eventually your relitive kicks you out, mid winter. With the shelters full, you turn to the only way you can survive, stealing. You eventually get caught, and having missed the document deadline, get deported",
+            text: "Bad Ending: Kicked out mid-winter & Deported. Your relitive lets you stay, but overtime your relationship sours over money. Eventually your relitive kicks you out, mid winter. With the shelters full, you turn to the only way you can survive, looting. You eventually get caught, and having missed the document deadline, get deported",
             options: [
                 { text: "End simulation.", nextNode: 'end' }
             ]
@@ -132,7 +135,7 @@
             ]
         },
         14: {
-            text: "Good Ending: Promoted to Manager",
+            text: "Good Ending: After a few years your hard work pays off when you get promoted to Manager. You life a nice life, you go on to live in a little apartment.",
             options: [
                 { text: "End simulation.", nextNode: 'end' }
             ]
@@ -149,12 +152,6 @@
                 { text: "End simulation.", nextNode: 'end' }
             ]
         },
-        17: {
-            text: "Bad Ending: Arrested in Workplace Raid, Deported",
-            options: [
-                { text: "End simulation.", nextNode: 'end' }
-            ]
-        },
         18: {
             text: "Normal Ending: Paid Private Translator just in time, but broke",
             options: [
@@ -162,7 +159,7 @@
             ]
         },
         19: {
-            text: "Bad Ending: Scammed by fake lawyer, Deported",
+            text: "Bad Ending: You go on a computer at the local library and find a ad for a lawyer that only takes $200. You reach out and they agree to help draft a Asylum claim, so you send all your money, then 'Lawyer ghosts you. Now with no money the deadline for documents and asylum claim passes, you get Deported",
             options: [
                 { text: "End simulation.", nextNode: 'end' }
             ]
@@ -180,7 +177,7 @@
         scenarioElement.innerHTML = '';
         
         if (nodeIndex === 'end') {
-            scenarioElement.innerHTML = "<div class='fade-in'>La simulation est terminée. Dans la vraie vie, les choix sont souvent impossibles à faire seul sans accès aux ressources de base.</div>";
+            scenarioElement.innerHTML = "<div class='fade-in'>The simulation is over. In real life, choices are often impossible to make alone without access to basic resources.</div>";
             resourceDiv.style.display = 'block';
             return;
         }
