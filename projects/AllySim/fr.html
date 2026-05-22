@@ -28,6 +28,7 @@
             <li style="margin-bottom: 10px;"><a href="https://ccrweb.ca/fr" target="_blank">Conseil canadien pour les réfugiés (CCR)</a></li>
             <li style="margin-bottom: 10px;"><a href="https://www.unicef.ca/fr" target="_blank">UNICEF Canada - Droits des enfants</a></li>
         </ul>
+        <p>Made by Corson Moise and Nolan Finlay</p>
         <button onclick="location.reload()" style="margin-top:10px;">Recommencer la simulation</button>
     </div>
 </div>
@@ -51,7 +52,7 @@
             ]
         },
         2: {
-            text: "Tu arriver a un shelter locale. Looking around, you see other refugees from all over the place.",
+            text: "Tu arriver a un shelter locale. En regardant autour de vous, tu voir d'autres réfugiés venus de partout.",
             options: [
                 { text: "Attendez 10 jours pour un a traduction gratuite et officielle", nextNode: 7 },
                 { text: "Chercher a la site d'offres d'emploi pour un emploi overt", nextNode: 5 },
@@ -65,9 +66,9 @@
             ]
         },
         4: {
-            text: "Your relitive lets you stay on their couch as long as you pay rent. You pay the most of your remaining money. The next month rolls around",
+            text: "Votre proche vous hébergera sur son canapé en échange d'un loyer. Vous lui donnez la majeure partie de votre argent. Un mois passe.",
             options: [
-                { text: "Pool resources, relative helps translate docs unofficially", nextNode: 10 },
+                { text: "Mettez vos ressources en commun. Un proche vous aide pour la traduction officieuse des documents.", nextNode: 10 },
                 { text: "Demandez de autre l'aide avant la date limite de 30 jours.", nextNode: 2 },
                 { text: "Suppliez pour rester, vous n'avez plus d'argent", nextNode: 11 },
             ]
@@ -75,18 +76,18 @@
 
 
         5: {
-            text: "On the board you find one job listing. There is a listing for...",
+            text: "Sur le tableau d'emploi, vous trouverez une offre d'emploi. Il s'agit d'une offre pour...",
             options: [
                 { text: "Un employé de supermarché", nextNode: 16 },
                 { text: "Tu changes d'avis, payer un Traducteur privé", nextNode: 18 }
             ]
         },
         6: {
-            text: "You deside to look for a lawyer, minding that you're low on cash...",
+            text: "Vous décidez de chercher un avocat, mais sachez que vous avez peu d'argent...",
             options: [
-                { text: "Get more cash for good lawyer", nextNode: 17 },
-                { text: "Choose the first lawyer you find", nextNode: 19 },
-                { text: "Use cash to buy equipment", nextNode: 20 },
+                { text: "Chercher plus d'argent pour un bonne avocat", nextNode: 17 },
+                { text: "Chosis la premiere avocat tu trouver", nextNode: 19 },
+                { text: "Utilise l'argent pour achete equipment", nextNode: 20 },
             ]
         },
         7: {
@@ -97,17 +98,17 @@
             ]
         },
         8: {
-            text: "You apply for a college... And you get accepted for classes and a student loan. You have the option to stay in dorms or in a shelter ",
+            text: "Tu appliquer pour collage... And you get accepted for classes and a student loan. You have the option to stay in dorms or in a shelter ",
             options: [
                 { text: "Stay in shelter", nextNode: 12 },
                 { text: "Stay in dorms", nextNode: 13 },
             ]
         },
         9: {
-            text: "After a few weeks you are able to find a government-placed entry-level job, passing the interview. But now you get to choose, are you going to put in Bare Minimum Effort, or Extra Effort?",
+            text: "After a few weeks you are able to find a government-placed entry-level job, passing the interview. But now you get to choose, are you going to put in Le strict minimum effort, ou effort supplémentaire?",
             options: [
-                { text: "Bare Minimum", nextNode: 15 },
-                { text: "Extra Effort", nextNode: 14 },
+                { text: "Strict minimum", nextNode: 15 },
+                { text: "Effort supplémentaire", nextNode: 14 },
             ]
         },
 
